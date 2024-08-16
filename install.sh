@@ -1,25 +1,37 @@
 #!/bin/bash
 
+# Clone the repository
 git clone https://github.com/zabojeb/pomotime.git pomotime
 cd pomotime
 
-pip3 install -r requirements.txt
+# Install pipx if it's not already installed
+if ! command -v pipx &> /dev/null
+then
+    echo "pipx could not be found. Installing pipx..."
+    python3 -m pip install --user pipx
+    python3 -m pipx ensurepath
+    export PATH="$HOME/.local/bin:$PATH"
+fi
 
+# Install dependencies using pipx
+pipx install .
+
+# Move the executable script
 sudo mv pomotime /usr/local/bin/pomotime
 sudo chmod +x /usr/local/bin/pomotime
 
+# Create config directory and move the files
 mkdir -p ~/.config/pomotime
 mv sounds ~/.config/pomotime/sounds
 mv pomotime.toml ~/.config/pomotime/pomotime.toml
 mv LICENSE ~/.config/pomotime/LICENSE
 mv README.md ~/.config/pomotime/README.md
 
-rm -rf .git .gitignore requirements.txt
+# Clean up the repository
+rm -rf .git .gitignore requirements.txt install.sh
 
+# Navigate back and remove the directory
 cd ..
 rmdir pomotime
 
-sudo sed -i 's/\r//' /usr/local/bin/pomotime
-sudo sed -i 's/\r//' ~/.config/pomotime/pomotime.toml
-
-echo "Pomotime installed succesfully!"
+echo "Pomotime installed successfully!"
