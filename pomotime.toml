@@ -1,0 +1,56 @@
+[settings]
+# BLOCK_MODE: bool = True
+# Default: True
+# If set to True, replaces all "#" characters to "█" for better display.
+block_mode = true
+
+# SOLID_MODE: bool = True
+# Default: True
+# If set to True, replaces all "#" characters to "██" for better display.
+solid_mode = true
+
+# FONT: str = "moscow"
+# Default: "moscow"
+# Font to use for timer.
+# Best performing fonts in BLOCK_MODE:
+# "xtty", "xsansb", "xcourb", "utopiab", "usa", "type_set", "moscow"
+# All fonts: https://github.com/sepandhaghighi/art
+font = "moscow"
+
+# TEXT_COLOUR_HIGH_PERCENT: str = "green"
+# Default: green
+# Color to display when timer is on high percent.
+# HEX is supported.
+text_colour_high_percent = "green"
+
+# TEXT_COLOUR_MID_PERCENT: str = "yellow"
+# Default: yellow
+# Color to display when timer is on middle percent.
+# HEX is supported.
+text_colour_mid_percent = "yellow"
+
+# TEXT_COLOUR_LOW_PERCENT: str = "red"
+# Default: red
+# Color to display when timer is on low percent.
+# HEX is supported.
+text_colour_low_percent = "red"
+
+# TIMER_HIGH_PERCENT: float = 0.5
+# Default: 0.5
+# Threshold to change timer color to TEXT_COLOUR_MID_PERCENT.
+timer_high_percent = 0.5
+
+# TIMER_LOW_PERCENT: float = 0.2
+# Default: 0.2
+# Threshold to change timer color to TEXT_COLOUR_LOW_PERCENT.
+timer_low_percent = 0.2
+
+# PATH_TO_SOUND: str = "~/.config/pomotime/sounds/1.mp3"
+# Default: "~/.config/pomotime/sounds/1.mp3"
+# Path to the sound file to be played when a session ends.
+path_to_sound = "~/.config/pomotime/sounds/1.mp3"
+
+# MESSAGE_COLOR: str = "cyan"
+# Default: "cyan"
+# Color of the message displayed under the timer.
+message_color = "cyan"
