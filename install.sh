@@ -12,7 +12,7 @@ mv pomotime.toml ~/.config/pomotime/pomotime.toml
 mv LICENSE ~/.config/pomotime/LICENSE
 mv README.md ~/.config/pomotime/README.md
 
-rm -rf .git .gitignore
+rm -rf .git .gitignore install.sh
 
 cd ..
 rmdir pomotime
